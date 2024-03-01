@@ -10,6 +10,7 @@ public class PayDay {
     public static void main(String[] args) {
         PayDay payday = new PayDay();
 
+
         StringBuilder outputReport = new StringBuilder();
         outputReport.append("PayDayReport for this week\n\n");
 
@@ -42,8 +43,15 @@ public class PayDay {
      *   Notice the data type of each of the four.
      * @return a string of the form "Kris 215.00 10.75 204.25”
      */
-    public String pay(String n, double rate, double worked, double deduct) {
-        return null;
+    public String pay(String n, double r, double w, double d) {
+
+        double grossPay = r * w;
+        double deduction = grossPay * d;
+        double netPay= grossPay - deduction;
+        String result = String.format("%s %.2f %.2f %.2f", n,
+                grossPay,deduction, netPay);
+
+        return result;
     }
 
 
